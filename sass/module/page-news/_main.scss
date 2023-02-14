@@ -1,0 +1,107 @@
+@import '../../setting/config';
+
+$class: '.main';
+
+#{$class} {
+  width: 64%;
+
+  @include mq(sp) {
+    width: 100%;
+  }
+
+  &-post {
+    width: 100%;
+    margin-bottom: 40px;
+    border: 2px solid $color-blue;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all $transTime;
+
+    &::before {
+      content: "";
+      width: 80px;
+      height: 2px;
+      background-color: $color-white;
+      position: absolute;
+      bottom: -2px;
+      right: 30px;
+      transition: all $transTime;
+    }
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $color-blue;
+      position: absolute;
+      bottom: 0;
+      right: 110px;
+      transform: translateY(calc(50% + 1px));
+      transition: all $transTime;
+    }
+    &:last-of-type {
+      margin-bottom: 45px;
+    }
+    &:hover {
+      box-shadow: 0 0 12px rgba($color: $color-black, $alpha: 0.6);
+
+      &::before {
+        width: 0;
+      }
+      &::after {
+        right: 30px;
+      }
+    }
+  }
+  &-img {
+    width: 40%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &-content {
+    width: calc(100% - 40%);
+    height: 100%;
+    padding: 38px 30px;
+
+    @include mq(tab) {
+      padding: 30px 22px;
+    }
+  }
+  &-tit {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: $medium-jp;
+
+    @include mq(sp) {
+      font-size: 14px;
+    }
+  }
+  &-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-category {
+    color: $color-orange;
+    font-size: 18px;
+    font-weight: $medium-jp;
+
+    @include mq(sp) {
+      font-size: 14px;
+    }
+  }
+  &-date {
+    font-size: 18px;
+    font-weight: $medium-en;
+
+    @include mq(sp) {
+      font-size: 14px;
+    }
+  }
+}

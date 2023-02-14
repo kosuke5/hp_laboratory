@@ -1,0 +1,25 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+@import '../../mixin/profile';
+
+$class: '.professor';
+$direction: left;
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner(1260px);
+    padding: 0 90px;
+
+    @include mq(tab) {
+      padding: 0 60px;
+    }
+    @include mq(sp) {
+      padding: 0 20px;
+    }
+  }
+  &-profile {
+    @include profile($class, $direction);
+  }
+}

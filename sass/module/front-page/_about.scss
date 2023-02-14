@@ -1,0 +1,110 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.about';
+
+#{$class} {
+  padding: 120px 0 60px;
+  background-color: #fff;
+
+  &-inner {
+    @include inner;
+  }
+  &-contents {
+    margin-bottom: 60px;
+
+    @include mq(sp) {
+      margin-bottom: 40px;
+    }
+  }
+  &-list {
+    margin-bottom: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+
+    @include mq(tab) {
+      gap: 70px;
+    }
+    @include mq(sp) {
+      margin-bottom: 40px;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  &-item {
+    @include mq(sp) {
+      // margin-bottom: ;
+    }
+  }
+  &-img {
+    margin-bottom: 10px;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+  &-tittop {
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: $medium-en;
+    line-height: calc(48 / 36);
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    @include mq(tab) {
+      font-size: 3.3vw;
+    }
+    @include mq(sp) {
+      font-size: 36px;
+    }
+  }
+  &-titmiddle {
+    margin-bottom: 10px;
+    color: $color-gray;
+    font-size: 18px;
+    font-weight: $medium-en;
+    line-height: calc(24 / 18);
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    @include mq(tab) {
+      font-size: 1.9vw;
+    }
+    @include mq(sp) {
+      font-size: 18px;
+    }
+  }
+  &-titbottom {
+    font-size: 18px;
+    font-weight: $medium-jp;
+    line-height: calc(24 / 18);
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    @include mq(tab) {
+      font-size: 1.9vw;
+    }
+    @include mq(sp) {
+      font-size: 18px;
+    }
+  }
+  &-txt {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 596px;
+    font-size: 24px;
+    font-weight: $regular-jp;
+    line-height: calc(33 / 24);
+
+    @include mq(tab) {
+      font-size: 2.3vw;
+    }
+    @include mq(sp) {
+      font-size: 18px;
+    }
+  }
+}

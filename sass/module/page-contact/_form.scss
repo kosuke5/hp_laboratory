@@ -1,0 +1,209 @@
+@import '../../setting/config';
+
+$class: '.form';
+
+#{$class} {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(sp) {
+    margin-top: 40px;
+  }
+
+  &-tit {
+    margin-bottom: 60px;
+    background-color: $color-white;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: $medium-jp;
+    text-align: center;
+
+    @include mq(sp) {
+      fsize: 24px;
+    }
+  }
+  &-container {
+    width: 100%;
+    background-color: $color-white;
+  }
+  &-body {
+    width: 100%;
+  }
+  &-part {
+    margin-bottom: 30px;
+  }
+  &-label {
+    margin-bottom: 19px;
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+
+    @include mq(sp) {
+      font-size: 16px;
+    }
+
+    &.required {
+      &::after {
+        content: "必須";
+        margin-left: 30px;
+        padding: 3px 12px;
+        background-color: $color-orange;
+        color: $color-white;
+        font-size: 14px;
+
+        @include mq(sp) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &-text {
+    width: 100%;
+    padding: 11px 20px;
+    border: 1px solid $color-placeholder;
+    border-radius: 10px;
+    appearance: none;
+    display: block;
+    color: $color-black;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all $transTime;
+
+    @include mq(sp) {
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+    &:focus {
+      border: 1px solid $color-cyan;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  &-textarea {
+    width: 100%;
+    height: 200px;
+    padding: 11px 20px;
+    border: 1px solid $color-placeholder;
+    border-radius: 10px;
+    resize: vertical;
+    appearance: none;
+    display: block;
+    color: $color-black;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all $transTime;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+    &:focus {
+      border: 1px solid $color-cyan;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  &-check {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  &-checkbox {
+    display: none;
+
+    &+span {
+      padding: 4px 0 4px 47px;
+      margin: 0 0.2em 0;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: $regular-jp;
+      position: relative;
+      cursor: pointer;
+
+      @include mq(sp) {
+        font-size: 16px;
+      }
+
+      span {
+        margin-right: 10px;
+        font-weight: $medium-jp;
+      }
+
+      &::before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        border: 1px solid $color-black;
+        border-radius: 2px;
+        background: $color-white;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include mq(sp) {
+          width: 28px;
+          height: 28px;
+        }
+      }
+      &::after {
+        content: "";
+        width: 18px;
+        height: 10px;
+        border-bottom: 3px solid $color-cyan;
+        border-left: 3px solid $color-cyan;
+        display: block;
+        opacity: 0;
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        transform: translateY(calc(-50% - 2px)) rotate(-45deg);
+        transition: all 0.3s ease 0s;
+
+        @include mq(sp) {
+          width: 14px;
+          height: 7px;
+        }
+      }
+    }
+    &:checked + span::after {
+      opacity: 1;
+    }
+  }
+  &-btn {
+    text-align: center;
+  }
+  &-submit {
+    padding: 11px 75px;
+    border: 2px solid $color-blue;
+    border-radius: 0;
+    background-color: $color-white;
+    background-image: none;
+    display: inline-block;
+    color: $color-blue;
+    font-size: 18px;
+    font-weight: $medium-jp;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all $transTime;
+
+    @include mq(sp) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      outline: none;
+      background-color: $color-blue;
+      color: $color-white;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

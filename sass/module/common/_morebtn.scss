@@ -1,0 +1,39 @@
+@import '../../setting/config';
+
+.morebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-link {
+    padding: 13px 89px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: $medium-en;
+    line-height: calc(24 / 18);
+    letter-spacing: 0.05em;
+    text-align: center;
+    transition: all $transTime;
+    
+    &._white {
+      border: 3px solid $color-blue;
+      background-color: transparent;
+      color: $color-blue;
+      
+      &:hover {
+        background-color: $color-blue;
+        color: $color-white;
+      }
+    }
+    &._blue {
+      border: 3px solid $color-white;
+      background-color: $color-blue;
+      color: $color-white;
+      
+      &:hover {
+        background-color: $color-white;
+        color: $color-blue;
+      }
+    }
+  }
+}

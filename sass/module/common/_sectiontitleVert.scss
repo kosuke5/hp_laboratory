@@ -1,0 +1,15 @@
+@import '../../setting/config';
+@import '../../mixin/title';
+
+$secClass: '.sectiontitleVert';
+$color: black, white;
+$position: left, right;
+
+@each $col in $color {
+  @each $pos in $position {
+    $class: #{$secClass} + '._#{$col}' + '._#{$pos}';
+    #{$class}{
+      @include title($secClass, $col, $pos);
+    }
+  }
+}

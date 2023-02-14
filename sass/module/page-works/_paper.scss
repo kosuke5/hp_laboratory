@@ -1,0 +1,15 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+@import '../../mixin/works';
+
+$class: '.paper';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner;
+  }
+
+  @include works($class);
+}

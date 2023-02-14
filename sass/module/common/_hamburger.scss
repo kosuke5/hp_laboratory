@@ -1,0 +1,92 @@
+@import '../../setting/config';
+
+$class: '.hamburger';
+
+#{$class} {
+  width: 34px;
+  height: 34px;
+  padding: 8px 0;
+  display: none;
+  position: relative;
+
+  @include mq(tab) {
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-icons {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+  }
+  &-icon {
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    display: inline-block;
+    position: absolute;
+    transition: all $transTime;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:nth-child(3) {
+      width: 65%;
+      bottom: 0;
+    }
+  }
+
+  // Java Script スタイル
+  // Drawer open and Button change
+  &.open {
+    #{$class} {
+      &-icon {
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          width: 0;
+        }
+        &:nth-child(3) {
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+  // Color: White
+  &._white {
+    #{$class} {
+      &-icon {
+        background-color: $color-white;
+      }
+    }
+  }
+  // Color: Blue
+  &._blue {
+    #{$class} {
+      &-icon {
+        background-color: $color-blue;
+      }
+    }
+  }
+  // Scroll change
+  &.checked {
+    #{$class} {
+      &-icon {
+        background-color: $color-blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+// =====================
+// Japanese
+// =====================
+$black-jp: 900;
+$bold-jp: 500;
+$medium-jp: 400;
+$regular-jp: 300;
+$light-jp: 200;
+$thin-jp: 100;
+
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Black.otf') format('opentype');
+  font-weight: $black-jp;
+}
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Bold.otf') format('opentype');
+  font-weight: $bold-jp;
+}
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Light.otf') format('opentype');
+  font-weight: $light-jp;
+}
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Medium.otf') format('opentype');
+  font-weight: $medium-jp;
+}
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Regular.otf') format('opentype');
+  font-weight: $regular-jp;
+}
+@font-face {
+  font-family: 'noto_sans_jp';
+  src: url('../../font/Noto_Sans_JP/NotoSansJP-Thin.otf') format('opentype');
+  font-weight: $thin-jp;
+}
+
+// =====================
+// English
+// =====================
+$thin-en: 100;
+$light-en: 300;
+$regular-en: 400;
+$medium-en: 500;
+$bold-en: 700;
+$black-en: 900;
+
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Thin.ttf') format('truetype');
+  font-weight: $thin-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+  font-weight: $thin-en;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Light.ttf') format('truetype');
+  font-weight: $light-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-LightItalic.ttf') format('truetype');
+  font-weight: $light-en;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: $regular-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Italic.ttf') format('truetype');
+  font-weight: $regular-en;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: $medium-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-MediumItalic.ttf') format('truetype');
+  font-weight: $medium-en;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: $bold-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: $bold-en;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-Black.ttf') format('truetype');
+  font-weight: $black-en;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../../font/Roboto/Roboto-BlackItalic.ttf') format('truetype');
+  font-weight: $black-en;
+  font-style: italic;
+}

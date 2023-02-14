@@ -1,0 +1,115 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.top';
+
+#{$class} {
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+
+  &-inner {
+    @include inner;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: map-get($map: $layer, $key: body);
+  }
+  &-tit {
+    margin-bottom: 40px;
+    color: $color-white;
+    text-align: center;
+
+    @include mq(sp) {
+      margin-bottom: 85px;
+    }
+    
+    &_up {
+      margin-bottom: 20px;
+      font-size: 26px;
+      letter-spacing: 0.1em;
+      line-height: calc(34 / 26);
+
+      @include mq(tab) {
+        font-size: 3.0vw;
+      }
+      @include mq(sp) {
+        font-size: max(3.0vw, 18px);
+      }
+
+      span {
+        color: $color-orange;
+      }
+    }
+    &_middle {
+      margin-bottom: 20px;
+      font-size: 90px;
+      font-weight: $medium-jp;
+      line-height: 1.4;
+
+      @include mq(tab) {
+        font-size: 9.0vw;
+      }
+      @include mq(sp) {
+        font-size: max(10vw, 34px);
+      }
+
+      span {
+        color: $color-orange;
+      }
+    }
+    &_down {
+      font-size: 26px;
+      letter-spacing: 0.05em;
+      line-height: calc(36 / 26);
+
+      @include mq(tab) {
+        font-size: 3.0vw;
+      }
+      @include mq(sp) {
+        font-size: max(3.0vw, 18px);
+      }
+    }
+  }
+  &-ttext {
+    display: inline-block;
+  }
+  &-button {
+    a {
+      max-width: 216px;
+      margin: 0 auto;
+      padding: 11px 46px;
+      border: 2px solid $color-cyan;
+      border-radius: 999px;
+      display: block;
+      color: $color-cyan;
+      font-weight: $medium-en;
+      letter-spacing: 0.1em;
+      text-align: center;
+      transition: all $transTime;
+
+      &:hover {
+        background: $color-cyan;
+        color: $color-white;
+      }
+    }
+  }
+  &-scrollbtn {
+    text-align: center;
+    position: absolute;
+    bottom: 36px;
+    
+    &-arrow {
+      margin-bottom: 11px;
+    }
+    &-txt {
+      color: $color-white;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+  }
+
+}

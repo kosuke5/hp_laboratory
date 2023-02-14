@@ -1,0 +1,12 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.contents';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner();
+  }
+}

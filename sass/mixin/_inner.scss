@@ -1,0 +1,12 @@
+@import '../setting/config';
+
+@mixin inner($max-width: 1280px){
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @include mq(tab){
+    padding: 0 20px;
+  }
+}

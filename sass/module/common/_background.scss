@@ -1,0 +1,21 @@
+@import '../../setting/config';
+
+$class: '.background';
+
+#{$class} {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: map-get($map: $layer, $key: body-bg);
+
+  // Background-Color: Blue
+  &._blue {
+    background-color: $color-blue;
+  }
+  // Background-Color: White
+  &._white {
+    background-color: $color-white;
+  }
+}

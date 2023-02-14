@@ -1,0 +1,15 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+@import '../../mixin/works';
+
+$class: '.conference';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner;
+  }
+
+  @include works($class);
+}

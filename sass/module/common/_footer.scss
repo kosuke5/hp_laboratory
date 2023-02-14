@@ -1,0 +1,106 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.footer';
+
+#{$class} {
+  padding: 30px 0 20px;
+  background-color: $color-black;
+
+  @include mq(sp) {
+    padding: 40px 0;
+  }
+
+  &-inner {
+    @include inner(100%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include mq(sp) {
+      position: static;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &-logo {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+
+    @include mq(sp) {
+      margin-bottom: 32px;
+      position: static;
+    }
+  }
+  &-center {
+    align-self: flex-end;
+
+    @include mq(sp) {
+      margin-bottom: 49px;
+      align-self: auto;
+    }
+  }
+  &-nav {
+    margin-bottom: 38px;
+
+    @include mq(sp) {
+      margin-bottom: 30px;
+    }
+
+    &list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    &item {
+      a {
+        display: block;
+        color: $color-white;
+        font-size: 12px;
+        font-weight: $medium-jp;
+        letter-spacing: 0.05em;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: #fff;
+          position: absolute;
+          bottom: -18px;
+          left: 0;
+          opacity: 0;
+          transition: $transTime;
+        }
+        &:hover::after {
+          bottom: -8px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-contact {
+    margin-bottom: 16px;
+    color: $color-white;
+    font-size: 24px;
+    font-weight: $medium-en;
+    letter-spacing: 0.2em;
+    text-align: center;
+
+    @include mq(sp) {
+      margin-bottom: 24px;
+    }
+  }
+  &-copyright {
+    margin-top: 30px;
+    display: block;
+    color: $color-white;
+    font-size: 12px;
+    font-weight: $regular-jp;
+    text-align: center;
+  }
+
+}

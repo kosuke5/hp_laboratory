@@ -1,0 +1,58 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.header';
+
+#{$class} {
+  width: 100%;
+  height: 100px;
+  background-color: $color-white;
+  position: fixed;
+  top: 0;
+  z-index: map-get($map: $layer, $key: header);
+
+  @include mq(tab){
+    height: 60px;
+  }
+
+  &-inner {
+    height: 100%;
+    @include inner(100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-logo {
+    width: 48px;
+    height: 48px;
+
+    @include mq(tab) {
+      width: 34px;
+      height: 34px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+
+    @include mq(tab) {
+      display: none;
+    }
+  }
+
+  // Front-Pageのみに適用
+  &.home {
+    background-color: transparent;
+    transition: all $transTime;
+  }
+  // Java Script スタイル
+  &.checked {
+    background-color: $color-white;
+  }
+}

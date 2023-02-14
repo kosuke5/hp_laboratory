@@ -1,0 +1,152 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.top';
+
+#{$class} {
+  width: 100%;
+  height: calc(100vh - 100px);
+  margin-bottom: 30px;
+  position: relative;
+
+  @include mq(tab) {
+    height: calc(100vh - 60px);
+  }
+  @include mq(sp) {
+    margin-bottom: 60px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      width: clamp(538px, calc(100vw + 160px), 850px);
+      height: clamp(538px, calc(100vw + 160px), 600px);
+      border-radius: 50%;
+      background-color: $color-blue;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: map-get($map: $layer, $key: body-bg);
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 50%;
+    height: 60px;
+    border-radius: 999px 0 0 999px;
+    background-color: $color-blue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+
+    @include mq(sp) {
+      width: 100%;
+      border-radius: 0px;
+    }
+  }
+  &-container {
+    width: 650px;
+    height: 100%;
+    padding: 60px 0 0 100px;
+    background: linear-gradient(to right bottom, $color-blue 0%, $color-blue 50%, transparent 50%, transparent 100%);
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 60px 40px 0 40px;
+      background: none;
+    }
+  }
+  &-tit {
+    margin-bottom: 20px;
+    display: inline-block;
+    color: $color-white;
+    font-size: 70px;
+    font-weight: $medium-en;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    position: relative;
+
+    @include mq(sp) {
+      font-size: 50px;
+    }
+
+    &::before {
+      content: "";
+      width: calc(100% + 60px);
+      height: 2px;
+      background-color: $color-cyan;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+    }
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-cyan;
+      position: absolute;
+      right: -60px;
+      bottom: -10px;
+      transform: translateY(calc(50% - 1px));
+    }
+  }
+  &-subtit {
+    margin-bottom: 60px;
+    color: $color-white;
+    font-size: 34px;
+    font-weight: $bold-jp;
+    letter-spacing: 0.05em;
+
+    @include mq(sp) {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+  }
+  &-icon {
+    position: absolute;
+    bottom: 60px;
+    right: 100px;
+
+    @include mq(sp) {
+      bottom: 50px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+  &-img {
+    @include mq(sp) {
+      width: 280px;
+      height: auto;
+    }
+
+    img {
+      @include mq(sp) {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+  &-scrollbtn {
+    margin-left: 40px;
+    display: inline-block;
+    text-align: center;
+    
+    @include mq(sp) {
+      margin-left: 0;
+      display: block;
+    }
+
+    &-arrow {
+      margin-bottom: 11px;
+    }
+    &-txt {
+      color: $color-white;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+  }
+}

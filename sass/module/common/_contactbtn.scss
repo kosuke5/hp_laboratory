@@ -1,0 +1,57 @@
+@import '../../setting/config';
+
+$class: '.contactbtn';
+
+#{$class} {
+  
+  &-link {
+    padding: 14px 27px;
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    transition: all $transTime;
+  }
+
+  // Font-Color: White
+  &._white {
+    #{$class} {
+      &-link {
+        border: 2px solid $color-white;
+        color: $color-white;
+
+        &:hover {
+          background: $color-white;
+          color: $color-blue;
+        }
+      }
+    }
+  }
+  // Font-Color: Blue
+  &._blue {
+    #{$class} {
+      &-link {
+        border: 2px solid $color-blue;
+        color: $color-blue;
+
+        &:hover {
+          background: $color-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+  // Java Script スタイル
+  &.checked {
+    #{$class} {
+      &-link {
+        border: 2px solid $color-black;
+        color: $color-black;
+
+        &:hover {
+          background: $color-black;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

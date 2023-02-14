@@ -1,0 +1,111 @@
+@import '../setting/config';
+
+@mixin works($class) {
+  #{$class} {
+    &-list {
+      margin-bottom: 20px;
+    }
+    &-item {
+      padding: 20px 30px;
+      border-top: 1px solid $color-gray;
+      background-color: $color-white;
+      font-size: 18px;
+      font-weight: $regular-jp;
+      line-height: calc(24 / 18);
+      letter-spacing: 0.05em;
+      position: relative;
+
+      @include mq(sp) {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $color-black;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:last-child {
+        border-bottom: 1px solid $color-gray;  
+      }
+      &:nth-child(3) {
+        border-bottom: 1px solid $color-gray;
+      }
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+    &-morebtn {
+      display: flex;
+      justify-content: flex-end;
+
+      span {
+        font-size: 24px;
+        font-weight: $medium-en;
+        letter-spacing: 0.05em;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 2px;
+          height: 31px;
+          background-color: $color-black;
+          position: absolute;
+          bottom: calc(-100% - 15px);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &::after {
+          content: "";
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $color-black;
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all $transTime;
+        }
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            bottom: calc(-100% - 15px);
+          }
+        }
+      }
+    }
+  }
+
+  // Java Script スタイル
+  &.open {
+    #{$class} {
+      &-item {
+        &:nth-child(3) {
+          border-bottom: none;
+        }
+        &:nth-child(n + 4) {
+          display: block;
+        }
+      }
+      &-morebtn {
+        span {
+          &::after {
+            bottom: calc(-100% - 15px);
+          }
+          &:hover {
+            &::after {
+              bottom: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// =============
+// Base
+// =============
+@import '../base/base';
+
+// =============
+// Module
+// =============
+// Common
+@import '../module/common/background';
+@import '../module/common/header';
+@import '../module/common/navbar';
+@import '../module/common/hamburger';
+@import '../module/common/drawer';
+@import '../module/common/breadcrumb';
+@import '../module/common/footer';
+@import '../module/common/topbtn';
+@import '../module/common/contactbtn';
+
+// Section
+@import '../module/page-contact-thanks/top';
+@import '../module/page-contact-thanks/thanks';

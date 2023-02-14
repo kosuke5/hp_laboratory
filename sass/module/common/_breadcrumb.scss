@@ -1,0 +1,32 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.breadcrumb';
+
+#{$class} {
+  margin-bottom: 80px;
+
+  &-inner {
+    @include inner;
+    display: flex;
+    align-items: center;
+
+    & > span {
+      margin: 0 8px;
+      font-size: 12px;
+      transition: all $transTime;
+
+      @include mq(sp) {
+        font-size: 14px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

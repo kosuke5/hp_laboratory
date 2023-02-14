@@ -1,0 +1,32 @@
+@import '../setting/config';
+// ==================
+// Font Family
+// ==================
+@import '../setting/font';
+// Japanese
+$ff-jp: 'noto_sans_jp';
+
+// English
+$ff-en: 'roboto';
+
+// Base
+$ff: $ff-jp, $ff-en, 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', 'YuGothic', 'Yu Gothic', 'メイリオ', 'Meiryo', 'MS PGothic', sans-serif;
+
+body {
+  padding-top: 100px;
+  background-color: #fff;
+  color: $color-black;
+  font-family: $ff;
+
+  @include mq(tab) {
+    padding-top: 60px;
+  }
+}
+
+body.home {
+  padding-top: 0;
+}
+
+a {
+  color: inherit;
+}

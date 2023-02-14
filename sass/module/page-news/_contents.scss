@@ -1,0 +1,24 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.contents';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner();
+    display: flex;
+    justify-content: center;
+    column-gap: 120px;
+
+    @include mq(tab) {
+      column-gap: 60px;
+    }
+    @include mq(sp) {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 80px;
+    }
+  }
+}

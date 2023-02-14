@@ -1,0 +1,84 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.title';
+
+#{$class} {
+  margin-bottom: 80px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: $color-blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $color-blue;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateY(calc(-50% + 1px));
+  }
+
+  &-inner {
+    @include inner();
+    display: flex;
+    justify-content: flex-start;
+  }
+  &-container {
+    padding-top: 60px;
+    text-align: center;
+  }
+  &-tit {
+    margin-bottom: 54px;
+    background-color: $color-white;
+    font-size: 48px;
+    font-weight: $medium-en;
+    letter-spacing: 0.05em;
+    position: relative;
+
+    @include mq(sp) {
+      font-size: 35px;
+    }
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 31px;
+      background-color: $color-black;
+      position: absolute;
+      bottom: -90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-black;
+      position: absolute;
+      bottom: -90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &-category {
+    background-color: $color-white;
+    font-size: 30px;
+    font-weight: $medium-jp;
+    letter-spacing: 0.05em;
+
+    @include mq(sp) {
+      font-size: 21px;
+    }
+  }
+}

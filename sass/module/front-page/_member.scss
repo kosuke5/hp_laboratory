@@ -1,0 +1,300 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.member';
+
+// Common Style
+#{$class} {
+  padding: 60px 0;
+  background-color: transparent;
+
+  &-inner {
+    @include inner(1480px);
+  }
+  &-item {
+    margin-bottom: 120px;
+    position: relative;
+
+    @include mq(sp) {
+      position: static;
+    }
+  }
+  &-tit {
+    color: $color-cyan;
+    font-size: 44px;
+    font-weight: $medium-en;
+    font-style: italic;
+    line-height: calc(58 / 44);
+    position: absolute;
+    top: 0;
+
+    @include mq(tab) {
+      font-size: min(4.4vw, 44px);
+    }
+    @include mq(sp) {
+      margin-bottom: 20px;
+      font-size: 34px;
+      position: static;
+    }
+  }
+  &-iwrapper {
+    height: min(49.7vw, 742px);
+    display: flex;
+
+    @include mq(tab) {
+      height: min(53.7vw, 742px);
+    }
+    @include mq(sp) {
+      height: auto;
+      display: block;
+    }
+  }
+  &-img {
+    width: min(22.7vw, 338px);
+    height: min(37.8vw, 563px);
+    box-shadow: 3px 3px 12px rgba($color: #000000, $alpha: 0.5);
+    z-index: 2;
+
+    @include mq(tab) {
+      width: min(26.7vw, 338px);
+      height: min(41.8vw, 563px);
+    }
+    @include mq(sp) {
+      width: 70%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto 30px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-content {
+    width: calc(100% - min(22.7vw, 338px));
+    height: min(38vw, 554px);
+    background-color: #fff;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include mq(sp) {
+      width: calc(100% + 40px);
+      height: auto;
+      margin: 0 -20px;
+      flex-direction: column;
+    }
+  }
+  &-decoration {
+    width: 170px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $color-cyan;
+    position: absolute;
+    top: -70px;
+
+    @include mq(tab) {
+      width: min(20.5vw, 200px);
+      top: -50px;
+    }
+    @include mq(sp) {
+      width: 151px;
+      margin-bottom: 20px;
+      position: static;
+      align-self: flex-start;
+    }
+  }
+  &-decorationtxt {
+    color: $color-cyan;
+    font-size: 24px;
+    font-weight: $medium-en;
+    line-height: calc(32 / 24);
+    letter-spacing: 0.05em;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-cyan;
+      position: absolute;
+      bottom: -14px;
+    }
+  }
+  &-profile {
+    @include mq(sp) {
+      align-self: center;
+    }
+  }
+  &-enname {
+    margin-bottom: 20px;
+    font-size: min(2.56vw, 38px);
+    font-weight: $medium-en;
+    line-height: calc(50 / 38);
+    letter-spacing: 0.05em;
+
+    @include mq(tab) {
+      font-size: min(3.16vw, 38px);
+    }
+    @include mq(sp) {
+      font-size: max(5.2vw, 34px);
+    }
+  }
+  &-jpname {
+    margin-bottom: 51px;
+    color: $color-orange;
+    font-size: min(1.63vw, 24px);
+    font-weight: $medium-jp;
+    line-height: calc(33 / 24);
+    letter-spacing: 0.05em;
+
+    @include mq(tab) {
+      margin-bottom: 31px;
+      font-size: min(2.0vw, 24px);
+    }
+    @include mq(sp) {
+      margin-bottom: 20px;
+      font-size: max(3.3vw, 20px);
+    }
+
+    span {
+      margin-left: 29px;
+      color: $color-black;
+      font-size: min(1.25vw, 18px);
+      line-height: calc(24 / 18);
+
+      @include mq(tab) {
+        font-size: min(1.45vw, 18px);
+      }
+      @include mq(sp) {
+        margin-top: 10px;
+        margin-left: 0;
+        display: block;
+        font-size: max(2.2vw, 14px);
+      }
+    }
+  }
+  &-career {
+    font-size: min(1.35vw, 20px);
+    font-weight: $regular-jp;
+    line-height: 1.5;
+
+    @include mq(tab) {
+      font-size: min(1.52vw, 20px);
+    }
+    @include mq(sp) {
+      font-size: max(2.2vw, 12px);
+    }
+  }
+}
+
+
+// Individual Style
+#{$class} {
+  &-item {
+    &:nth-child(2n+1) {
+      #{$class} {
+        &-tit {
+          right: 150px;
+        }
+        &-iwrapper {
+          flex-direction: row;
+        }
+        &-img {
+          transform: translateX(50%);
+
+          @include mq(tab) {
+            transform: translateX(40%);
+          }
+          @include mq(sp) {
+            transform: none;
+          }
+        }
+        &-content {
+          padding-left: 40px;
+
+          @include mq(sp) {
+            padding: 35px 20px;
+          }
+        }
+        &-decoration {
+          transform: rotate(90deg);
+          right: 0px;
+
+          @include mq(tab) {
+            right: -55px;
+          }
+          @include mq(sp) {
+            transform: rotate(0);
+          }
+        }
+        &-decorationtxt {
+          &::after {
+            right: -10px;
+          }
+        }
+      }
+    }
+    &:nth-child(2n) {
+      #{$class} {
+        &-tit {
+          left: 150px;
+        }
+        &-iwrapper {
+          flex-direction: row-reverse;
+        }
+        &-img {
+          transform: translateX(-50%);
+
+          @include mq(tab) {
+            transform: translateX(-40%);
+          }
+          @include mq(sp) {
+            transform: none;
+          }
+        }
+        &-content {
+          padding-right: 40px;
+
+          @include mq(sp) {
+            padding: 35px 20px;
+          }
+        }
+        &-decoration {
+          transform: rotate(-90deg);
+          left: 0px;
+
+          @include mq(tab) {
+            left: -55px;
+          }
+          @include mq(sp) {
+            transform: rotate(0);
+          }
+        }
+        &-decorationtxt {
+          text-align: right;
+
+          &::after {
+            left: -10px;
+
+            @include mq(sp) {
+              left: auto;
+              right: -10px;
+            }
+          }
+
+          @include mq(sp) {
+            text-align: left;
+          }
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 60px;
+    }
+  }
+}

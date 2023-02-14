@@ -1,0 +1,61 @@
+@import '../../setting/config';
+
+$class: '.pagination';
+
+#{$class} {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page-numbers {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border: 2px solid $color-blue;
+    border-radius: 50%;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all $transTime;
+
+    @include mq(sp) {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:nth-last-child(2) {
+      margin-right: 0;
+    }
+    &.prev {
+      margin-right: 30px;
+
+      @include mq(sp) {
+        margin-right: 20px;
+      }
+    }
+    &.next {
+      margin-right: 0;
+      margin-left: 30px;
+
+      @include mq(sp) {
+        margin-left: 20px;
+      }
+    }
+    &.current {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+    .fas {
+      font-size: 20px;
+      transition: all $transTime;
+    }
+
+    &:hover {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+  }
+}

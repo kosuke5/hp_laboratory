@@ -1,0 +1,116 @@
+@import '../../setting/config';
+
+$class: '.sidebar';
+
+#{$class} {
+  width: calc(100% - 64% - 120px);
+
+  @include mq(sp) {
+    width: 100%;
+  }
+
+  // Category
+  &-cat {
+    margin-bottom: 80px;
+
+    &tit {
+      margin-bottom: 30px;
+      font-size: 34px;
+      font-weight: $medium-en;
+      letter-spacing: 0.05em;
+    }
+    &item {
+      width: 100%;
+      max-width: 250px;
+      border-top: 1px solid $color-gray;
+      background-color: $color-white;
+
+      @include mq(sp) {
+        max-width: 100%;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $color-gray;
+      }
+    }
+    &link {
+      padding: 13px 18px;
+      display: block;
+      font-size: 20px;
+      font-weight: $medium-jp;
+      position: relative;
+
+      &::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: '\f105';   /* FontAwesomeで与えられるコード */
+        color: $color-black;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        transition: all $transTime;
+      }
+      &:hover {
+        &::after {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  // Achieve
+  &-achieve {
+    
+    &tit {
+      margin-bottom: 30px;
+      font-size: 34px;
+      font-weight: $medium-en;
+      letter-spacing: 0.05em;
+    }
+    &item {
+      width: 100%;
+      max-width: 250px;
+      border-top: 1px solid $color-gray;
+      background-color: $color-white;
+
+      @include mq(sp) {
+        max-width: 100%;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $color-gray;
+      }
+    }
+    &link {
+      padding: 13px 18px;
+      display: block;
+      font-size: 20px;
+      font-weight: $medium-jp;
+      position: relative;
+
+      @include mq(sp) {
+        padding: 13px 24px;
+      }
+
+      &::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: '\f105';   /* FontAwesomeで与えられるコード */
+        color: $color-black;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        transition: all $transTime;
+      }
+      &:hover {
+        &::after {
+          right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.contact';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner(800px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-intro {
+    background-color: $color-white;
+    font-size: 14px;
+    font-weight: $regular-jp;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+}

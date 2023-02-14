@@ -1,0 +1,93 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.vision';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner(1160px);
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(sp) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &-img {
+    width: 46%;
+    height: auto;
+    order: 1;
+
+    @include mq(sp) {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      order: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &-content {
+    width: calc(100% - 46% - 129px);
+    margin-right: 129px;
+    order: 0;
+
+    @include mq(tab) {
+      width: calc((100% - 46% - 40px));
+      margin-right: 40px;
+    }
+    @include mq(sp) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &-tit {
+    margin-bottom: 10px;
+    background-color: $color-white;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: $bold-jp;
+    line-height: calc(53 / 40);
+    letter-spacing: 0.05em;
+
+    @include mq(tab) {
+      font-size: 36px;
+    }
+    @include mq(sp) {
+      margin-bottom: 10px;
+    }
+  }
+  &-subtit {
+    margin-bottom: 35px;
+    background-color: $color-white;
+    display: inline-block;
+    color: $color-gray;
+    font-size: 24px;
+    font-weight: $bold-jp;
+
+    @include mq(tab) {
+      font-size: 20px;
+    }
+    @include mq(sp) {
+      margin-bottom: 28px;
+    }
+  }
+  &-txt {
+    background-color: $color-white;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: $regular-jp;
+    line-height: calc(36 / 18);
+    letter-spacing: 0.03em;
+
+    @include mq(tab) {
+      font-size: 14px;
+    }
+  }
+}

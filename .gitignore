@@ -1,0 +1,5 @@
+# Ignore prepros configure
+/prepros.config
+
+# Ignore license
+/License.txt

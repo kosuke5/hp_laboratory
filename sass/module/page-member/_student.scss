@@ -1,0 +1,138 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.student';
+
+#{$class} {
+  margin-bottom: 120px;
+
+  &-inner {
+    @include inner(1160px);
+    display: flex;
+
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &-navbar {
+    width: 92px;
+    margin-right: 100px;
+
+    @include mq(tab) {
+      margin-right: 80px;
+    }
+    @include mq(sp) {
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 60px;
+    }
+  }
+  &-list {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 999px;
+    background-color: $color-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+
+    @include mq(sp) {
+      height: 72px;
+      padding: 0 20px;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0 10px;
+    }
+  }
+  &-item {
+    width: 66px;
+    height: 66px;
+    border: 2px solid $color-white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: 24px;
+    font-weight: $medium-en;
+    letter-spacing: 0.05em;
+    transition: all $transTime;
+
+    @include mq(sp) {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+    }
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      cursor: pointer;
+    }
+    &.selected {
+      background-color: $color-white;
+      color: $color-black;
+      cursor: auto;
+    }
+  }
+  &-container {
+    width: calc(100% - 92px - 100px);
+
+    @include mq(tab) {
+      width: calc(100% - 92px - 80px);
+    }
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 113px;
+
+    @include mq(tab) {
+      gap: 40px 80px;
+    }
+  }
+  &-card {
+    width: calc((100% - 113px * 2) / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(tab) {
+      width: calc((100% - 80px) / 2);
+    }
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+  &-img {
+    width: clamp(200px, 19vw, 220px);
+    height: clamp(200px, 19vw, 220px);
+    margin: 0 auto 25px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &-profile {
+    background-color: $color-white;
+  }
+  &-name {
+    margin-bottom: 11px;
+    font-size: 22px;
+    font-weight: $medium-jp;
+    text-align: center;
+  }
+  &-class {
+    color: $color-gray;
+    font-size: 20px;
+    font-weight: $medium-en;
+    text-align: center;
+  }
+}

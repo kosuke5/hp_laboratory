@@ -1,0 +1,87 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.works';
+
+#{$class} {
+  padding: 60px 0;
+  background-color: #fff;
+
+  &-inner {
+    @include inner(980px);
+  }
+  &-list {
+    margin-bottom: 60px;
+    padding: 70px 70px;
+    border-radius: 30px;
+    box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.4);
+
+    @include mq(sp) {
+      padding: 40px 20px;
+    }
+  }
+  &-item {
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: relative;
+    transition: background-position $transTime;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-link {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba($color: $color-gray, $alpha: 1.0);
+    display: block;
+    transition: all $transTime;
+  }
+  &-info {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq(sp) {
+      margin-bottom: 25px;  
+    }
+  }
+  &-category {
+    width: 106px;
+    padding: 8px 0;
+    border: 2px solid $color-orange;
+    color: $color-orange;
+    font-size: 16px;
+    font-weight: $regular-jp;
+    line-height: calc(22 / 16);
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    @include mq(sp) {
+      width: 90px;
+      font-size: 12px;
+    }
+  }
+  &-time {
+    font-size: 16px;
+    line-height: calc(24 / 18);
+    transition: all $transTime;
+
+    @include mq(sp) {
+      font-size: 14px;
+    }
+  }
+  &-tit {
+    font-size: 18px;
+    font-weight: $regular-jp;
+    line-height: calc(24 / 18);
+    letter-spacing: 0.05em;
+    transition: all $transTime;
+
+    @include mq(sp) {
+      font-size: 14px;
+      line-height: calc(19 / 14);
+    }
+  }
+}

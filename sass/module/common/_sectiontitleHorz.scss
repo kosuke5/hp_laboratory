@@ -1,0 +1,139 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.sectiontitleHorz';
+
+#{$class} {
+  // ***************
+  // Common Style
+  // ***************
+  margin-bottom: 80px;
+  
+  @include mq(sp) {
+    margin-bottom: 60px;
+  }
+  
+  &-inner {
+    display: flex;
+    justify-content: center;
+  }
+  &-center {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 40px;
+    display: flex;
+
+    @include mq(tab) {
+      padding: 0 20px;
+    }
+  }
+  &-left {
+    flex-grow: 1;
+    position: relative;
+  }
+  &-right {
+    flex-grow: 1;
+    position: relative;
+  }
+  &-container {
+    display: inline-block;
+    text-align: center;
+  }
+  &-tit {
+    margin-bottom: 20px;
+    background-color: $color-white;
+    color: $color-cyan;
+    font-size: 48px;
+    font-weight: $medium-en;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: calc(100% + 30px + 40px);
+      height: 2px;
+      background-color: $color-cyan;
+      position: absolute;
+      bottom: -10px;
+
+      @include mq(tab) {
+        width: calc(100% + 30px + 20px);
+      }
+    }
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-cyan;
+      position: absolute;
+      bottom: -10px;
+    }
+  }
+  &-subtit {
+    background-color: $color-white;
+    color: $color-cyan;
+    font-size: 24px;
+    font-weight: $bold-jp;
+    letter-spacing: 0.05em;
+  }
+
+  // *******************
+  // Individual Style
+  // *******************
+  // Right
+  &._right {
+    #{$class} {
+      &-center {
+        justify-content: flex-end;
+      }
+      &-right {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: $color-cyan;
+          position: absolute;
+          top: 56px;
+          right: 0;
+        }
+      }
+      &-tit {
+        &::before {
+          left: -30px;
+        }
+        &::after {
+          left: -30px;
+          transform: translateY(calc(50% - 1px));
+        }
+      }
+    }
+  }
+  // Left
+  &._left {
+    #{$class} {
+      &-center {
+        justify-content: flex-start;
+      }
+      &-left {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: $color-cyan;
+          position: absolute;
+          top: 56px;
+          right: 0;
+        }
+      }
+      &-tit {
+        &::before {
+          right: -30px;
+        }
+        &::after {
+          right: -30px;
+          transform: translateY(calc(50% - 1px));
+        }
+      }
+    }
+  }
+}

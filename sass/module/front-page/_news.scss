@@ -1,0 +1,95 @@
+@import '../../setting/config';
+@import '../../mixin/inner';
+
+$class: '.news';
+
+#{$class} {
+  padding: 60px 0 120px;
+  background-color: transparent;
+
+  &-inner {
+    @include inner(1080px);
+  }
+  &-list {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 54px 44px;
+  }
+  &-card {
+    width: calc((100% - 44px * 2) / 3);
+    max-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.5);
+    transition: all $transTime;
+
+    @include mq(tab) {
+      width: calc((100% - 44px * 2) / 2);
+      max-width: 350px;
+    }
+    @include mq(sp) {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+  &-img {
+    width: 100%;
+    height: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all $transTime;
+    }
+  }
+  &-info {
+    height: 50%;
+    padding: 20px 25px 20px;
+  }
+  &-tit {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: $medium-jp;
+    line-height: calc(33 / 24);
+    letter-spacing: 0.05em;
+
+    @include mq(sp) {
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+  }
+  &-category {
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    border: 1px solid $color-orange;
+    display: inline-block;
+    color: $color-orange;
+    font-size: 12px;
+    font-weight: $medium-jp;
+  }
+  &-discription {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: $regular-jp;
+    line-height: calc(19 / 14);
+    letter-spacing: 0.05em;
+
+    @include mq(sp) {
+      margin-bottom: 32px;
+      font-size: 12px;
+    }
+  }
+  &-time {
+    display: block;
+    font-size: 14px;
+    font-weight: $regular-jp;
+    line-height: calc(19 / 14);
+    text-align: right;
+  }
+}

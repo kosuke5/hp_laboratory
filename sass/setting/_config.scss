@@ -1,0 +1,55 @@
+// =====================
+// Color
+// =====================
+$color-black: #3B4043;
+$color-white: #ffffff;
+$color-gray: #707F89;
+$color-blue: #1D2739;
+$color-cyan: #11B7DA;
+$color-orange: #E1BF83;
+$color-placeholder: #BBBBBB;
+
+// =====================
+// Trainsition Time
+// =====================
+$transTime: 0.3s;
+
+
+// =====================
+// Layer
+// =====================
+$layer: (
+  body-bg: -1,
+  default: 1,
+  body: 5,
+  top-btn: 10,
+  header: 200,
+  share: 300,
+  drawer: 100,
+  drawer-bg: 110,
+  drawer-content: 120,
+  drawer-btn: 210,
+);
+
+
+// ====================
+// Media Query
+// ====================
+// Device Width
+$pc-width: 1280px;
+$tab-width: 1024px;
+$sp-width: 767px;
+
+// Break Point
+$breakpoints: (
+  'pc': "(max-width: " + $pc-width + ")",
+  'tab': "(max-width: " + $tab-width + ")",
+  'sp': "(max-width: " + $sp-width + ")"
+);
+
+// mediaquery
+@mixin mq($breakpoint: 'pc') {
+  @media #{map-get($breakpoints , $breakpoint)} {
+    @content;
+  }
+}

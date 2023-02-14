@@ -1,0 +1,92 @@
+@import '../setting/config';
+
+@mixin title($class, $color: black, $position: left) {
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+
+  @include mq(sp) {
+    margin-bottom: 60px;
+  }
+  
+  #{$class} {
+    &-container {
+      padding: 0 45px;
+      display: inline-block;
+      position: relative;
+    }
+    &-decoration {
+      width: 2px;
+      height: 100%;
+      @if $color == black {
+        background-color: $color-black;
+      } @else if $color == white {
+        background-color: $color-white;
+      }
+      position: absolute;
+      top: 0;
+      @if $position == left {
+        left: 0;
+      } @else if $position == right {
+        right: 0;
+      }
+  
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        @if $color == black {
+          background-color: $color-black;
+        } @else if $color == white {
+          background-color: $color-white;
+        }
+        position: absolute;
+        bottom: 0;
+        @if $position == left {
+          left: 0;
+          transform: translateX(calc(-50% + 1px));
+        } @else if $position == right {
+          right: 0;
+          transform: translateX(calc(50% - 1px));
+        }
+      }
+    }
+    &-txt {
+      text-align: center;
+  
+      &-top {
+        @if $color == black {
+          color: $color-black;
+        } @else if $color == white {
+          color: $color-white;
+        }
+        font-size: 48px;
+        font-weight: $medium-en;
+        line-height: calc(63 / 48);
+
+        @include mq(sp) {
+          font-size: 40px;
+        }
+      }
+      &-bottom {
+        @if $color == black {
+          color: $color-gray;
+        } @else if $color == white {
+          color: rgba($color: $color-white, $alpha: 0.8);
+        }
+        font-size: 24px;
+        line-height: calc(33 / 24);
+        letter-spacing: 0.05em;
+
+        @include mq(sp) {
+          font-size: 20px;
+        }
+  
+        span {
+          font-weight: $bold-jp;
+        }
+      }
+    }
+  }
+}
